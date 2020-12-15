@@ -11,7 +11,7 @@ const SectionDescription = lazy(() => import("../../components/SectionDescriptio
 
 const Contact = () => {
 
-    const [isVisible, setIsVisiblee] = useState(null);
+    const [isVisible, setIsVisiblee] = useState(false);
     useEventListener("scroll", "controllContact", setIsVisiblee);
 
     const animationProps = useSpring({

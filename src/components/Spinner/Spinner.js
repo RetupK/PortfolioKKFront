@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { LogoWrapper, Screen, NofreezeSpinner, SpinnerDiv, SpinnerDivContainer, Svg } from "./Spinner.css";
+import { LogoWrapper, Screen, NofreezeSpinner, SpinnerDiv, SpinnerDivContainer, Svg, TextUnderSpinner } from "./Spinner.css";
 import { AiOutlineHome } from "react-icons/ai";
 import { FaUsers } from "react-icons/fa";
 import { BsBriefcaseFill } from "react-icons/bs"
@@ -20,6 +20,7 @@ const AnimatedSplash = () => {
                             <BsBriefcaseFill />
                         </Svg>
                         <SpinnerDiv />
+                        <TextUnderSpinner>Krystian Kalinowski</TextUnderSpinner>
                     </SpinnerDivContainer>
                 </NofreezeSpinner>
             </Screen>

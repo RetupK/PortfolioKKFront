@@ -15,20 +15,17 @@ export const WorkprocessData = [
         name: "POMYSŁ",
         icon: <GoLightBulb/>,
         isBackground: true,
-        isVisible: false
     },
     {
         id: 1,
         name: "DESIGN",
         icon: <FaPencilAlt/>,
-        isVisible: false
     },
     {
         id: 2,
         name: "KODOWANKO",
         icon: <BiCodeAlt/>,
         isBackground: true,
-        isVisible: false
     },
     {
         id: 3,
@@ -41,6 +38,5 @@ export const WorkprocessData = [
         name: "URUCHOMIENIE",
         icon: <BiRocket/>,
         isBackground: true,
-        isVisible: false
     },
 ]

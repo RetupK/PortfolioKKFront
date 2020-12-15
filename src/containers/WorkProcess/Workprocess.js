@@ -6,7 +6,7 @@ import Fade from 'react-reveal/Slide';
 import { useEventListener } from "../../utility/HelperFunction/useEventListener";
 
 const WorkProcess = () => {
-    const [isVisible, setIsVisible] = useState(null);
+    const [isVisible, setIsVisible] = useState(false);
     useEventListener("scroll", "controllContainer", setIsVisible);
 
     return (

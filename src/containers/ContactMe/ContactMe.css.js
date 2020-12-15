@@ -20,4 +20,5 @@ export const FormWrapper = styled.div`
     box-shadow: ${props => props.theme.box_shadows.shadow1};
     border: 5px solid ${props => props.theme.colors.color3};
     border-radius: 10px;
+    margin: 0px 20px;
 `

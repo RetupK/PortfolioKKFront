@@ -47,16 +47,16 @@ export const PortfolioTextContainer = styled.div`
         height:7px;
         border-radius:50%;
         background: ${props => props.theme.colors.color2};
-        margin: 33px 0px 23px -8px;
+        margin: 29px 0px 23px -5px;
         @media (max-width: 768px) {
-            margin: 33px 0px 40px -2px;
+            margin: 32px 0px 38px -5px;
         }
         @media (min-width: 768px) and (max-width: 1199px){
             margin: 24px 0px 40px -6px;
         }
     }
     @media (max-width: 768px) {
-        width: 60%;
+        width: 140px;
         display: flex;
         align-items: center;
         height: 56px;
@@ -64,7 +64,7 @@ export const PortfolioTextContainer = styled.div`
     @media (min-width: 768px) and (max-width: 1199px){
         height: 60px;
         padding: 0px 50px;
-        width: 57%;
+        width: 200px;
     }
 `
 

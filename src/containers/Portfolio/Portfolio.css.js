@@ -52,7 +52,7 @@ export const Img = styled.img`
 `
 
 export const ImageContainer = styled.div`
-    width: 80%;
+    width: 100%;
     height: 100%;
     &:hover{
         background: white;

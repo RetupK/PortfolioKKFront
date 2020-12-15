@@ -102,7 +102,7 @@ const loadIcons = keyframes`
 export const Svg = styled.div`
     font-size: 24px;
     position: absolute;
-    top: 0px;
+    top: -4px;
     left: 0px;
     right: 0;
     bottom: 0;
@@ -121,4 +121,19 @@ export const Svg = styled.div`
     &:nth-of-type(3){
         animation: ${loadIcons} 3s 2s infinite ease-in-out;
     }
+`
+
+export const TextUnderSpinner = styled.h3`
+    font-family: 'Cedarville Cursive', cursive;
+    width: 400px;
+    position: relative;
+    right: 130px;
+    margin-top: 100px;
+    color: white;
+    font-size: 40px;
+    @media(max-width: 767px) {
+        font-size: 30px;
+        right: 90px;
+    }
+
 `

@@ -59,6 +59,7 @@ const Achievments = () => {
                             <DivTest>
                                 <ReactImageMagnify 
                                 hintTextMouse="Najedź by przybliżyć"
+                                hintTextTouch="Przytrzymaj by przybliżyć"
                                     {...{
                                         smallImage: {
                                             alt: "Wristwatch by Ted Baker London",

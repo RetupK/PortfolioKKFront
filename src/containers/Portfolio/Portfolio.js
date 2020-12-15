@@ -4,7 +4,7 @@ import { portfolioDescription, projects } from "./PortfolioData";
 import { SingleElContainer, PortfolioMainContainer, IconsContainer, SingleIcon, P, Img, ImageContainer, ElementsOnHoverContainer, SingleLink, LinkIcon, GithubIcon } from "./Portfolio.css";
 
 const Portfolio = () => {
-    const [mouseEnter, setMouseEnter] = useState(null);
+    const [mouseEnter, setMouseEnter] = useState(false);
 
     const handleChangeMouse = useCallback((id) => {
         setMouseEnter(id)

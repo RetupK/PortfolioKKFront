@@ -25,7 +25,7 @@ export const GreetingCardContainer = styled.div`
         width: 95%;
         padding-top: 70px;
         height: auto;
-        margin-top: 50px;
+        margin-top: 10px;
     }
     @media (min-width: 768px) and (max-width: 1199px){
         width: 86%;

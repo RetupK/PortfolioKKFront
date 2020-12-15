@@ -12,10 +12,10 @@ const CircleComp = lazy(() => import("../../components/AllAboutCircleAndProgress
 
 const Skills = () => {
 
-    const [isVisibleCircle, setIsVisibleCircle] = useState(null);
+    const [isVisibleCircle, setIsVisibleCircle] = useState(false);
     useEventListener("scroll", "controllCircle", setIsVisibleCircle);
 
-    const [isVisible, setIsVisible] = useState(null);
+    const [isVisible, setIsVisible] = useState(false);
     useEventListener("scroll", "controllTest", setIsVisible);
 
 
