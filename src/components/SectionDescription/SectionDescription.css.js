@@ -44,7 +44,8 @@ export const TitleContainer = styled.div`
         width: 50px;
         border: 3px solid;
         margin: 65px 0px 0px -25px;
-        color: #F54EA2;
+        color: ${props => props.theme.colors.color2};
+        background: ${props => props.theme.colors.color2};
     }
     @media (max-width: 767px) {
         margin-bottom: 20px;
