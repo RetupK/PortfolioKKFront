@@ -10,6 +10,8 @@ const Navbar = () => {
 
     const [isShow, setIsShow] = useState(false);
 
+    const hideNav = () => setIsShow(false);
+
     return (
         <NavbarContainer isShow={isShow}>
             <PortfolioTextContainer>
@@ -21,7 +23,7 @@ const Navbar = () => {
             <Ul isShow={isShow}>
                 {NavbarData.map((item) =>
                     <NavLink key={item.id} to={`/#${item.name}`}>
-                        <List isShow={isShow}>{item.name}</List>
+                        <List onClick={hideNav} isShow={isShow}>{item.name}</List>
                     </NavLink>
                 )}
             </Ul>
