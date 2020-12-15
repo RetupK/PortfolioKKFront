@@ -30,7 +30,7 @@ const Contact = () => {
     
 
     const handleSubmit = (data) => {
-        axios.post('http://krystiankalinowskibackend.herokuapp.com/contacts', {
+        axios.post('https://krystiankalinowskibackend.herokuapp.com/contacts', {
             title: data.title,
             email: data.email,
             message: data.message
