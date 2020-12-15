@@ -27,12 +27,12 @@ export const TextContainer = styled(SubTitle)`
     text-transform: unset;
     @media (max-width: 767px) {
         width: 100%;
-        padding: 0px 10px;
+        padding: 0px 25px;
     }
     @media (min-width: 768px) and (max-width: 1199px){
-        padding: 0px 15px;
+        padding: 0px 30px;
     }
     @media (min-width: 1200px) and (max-width: 1400px) {
-        padding: 0px 25px;
+        padding: 0px 30px;
     }
 `
