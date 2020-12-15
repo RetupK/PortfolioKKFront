@@ -7,9 +7,13 @@ import styled from "styled-components";
 const ModalHeader = styled(Modal.Header)`
     background: #1d8cf8;
     color: white;
-    border: unset;
+    border: 3px solid;
     text-align: center;
     border-radius: 5px;
+`
+
+const ModalTitle = styled(Modal.Title)`
+    width: 100%;
 `
 
 const ModalComp = ({children, showModal, toggleModal}) => {
@@ -24,7 +28,7 @@ const ModalComp = ({children, showModal, toggleModal}) => {
         <>
             <Modal show={showModal}>
                 <ModalHeader closeButton>
-                    <Modal.Title>{children}</Modal.Title>
+                    <ModalTitle>{children}</ModalTitle>
                 </ModalHeader>
             </Modal>
         </>
