@@ -37,7 +37,7 @@ export const Screen = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #55198b;
+    background-color: black;
     overflow: hidden;
     border-radius: 100%;
     animation: ${grow} 3s forwards;
@@ -133,7 +133,7 @@ export const TextUnderSpinner = styled.h3`
     font-size: 40px;
     @media(max-width: 767px) {
         font-size: 30px;
-        right: 90px;
+        right: 100px;
     }
 
 `

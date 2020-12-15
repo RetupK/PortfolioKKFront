@@ -8,7 +8,6 @@ export const ContentContainer = styled.div`
     box-sizing: border-box;
     margin-left: 300px;
     overflow: hidden;
-    padding:0px 10px;
     @media (max-width: 768px) {
         margin: 0;
     }

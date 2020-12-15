@@ -63,5 +63,8 @@ export const Label = styled.label`
     }
 `
 
+export const ErrorDiv = styled.div`
+    color: red;
+`
 
 

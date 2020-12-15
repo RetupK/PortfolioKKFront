@@ -1,76 +1,81 @@
-import React, { lazy, Suspense, useState } from "react";
+import React, { lazy, Suspense, useMemo, useState } from "react";
 import { ContactMainContainer, FormWrapper } from "./ContactMe.css";
 import { formData, contactMeTitle } from "./ContactMeData";
 import axios from "axios";
-import { useEventListener } from "../../utility/HelperFunction/useEventListener";
-import { useSpring, animated } from 'react-spring'
 import Loading from "../../components/Spinner/SpinnerLoading/SpinnerLoading.css";
+import { api } from "../../utility/Api/ApiLinks";
+import ModalComp from "../../components/Modal/Modal";
+import Bounce from 'react-reveal/Bounce';
 const Form = lazy(() => import("../../components/AllAboutForm/Form/Form"));
 const Input = lazy(() => import("../../components/AllAboutForm/Input/Input"));
 const SectionDescription = lazy(() => import("../../components/SectionDescription/SectionDescription"));
 
 const Contact = () => {
-
-    const [isVisible, setIsVisiblee] = useState(false);
-    useEventListener("scroll", "controllContact", setIsVisiblee);
-
-    const animationProps = useSpring({
-        transform: "scale(1)",
-        opacity: 1,
-        x: 200,
-        from: {
-            border: "0px solid",
-            transform: "scale(0.5)",
-            opacity: 0,
-            x: 0,
-        },
-        config: {duration: 500},
-        reset: isVisible,
-    })
-    
+    const [sendedEmail, setSendedEmail] = useState(false);
 
     const handleSubmit = (data) => {
-        axios.post('https://krystiankalinowskibackend.herokuapp.com/contacts', {
+        axios.post(api("contacts"), {
             title: data.title,
             email: data.email,
             message: data.message
         })
             .then(function (response) {
                 console.log(response);
+                setSendedEmail(true);
             })
             .catch(function (error) {
                 console.log(error);
             });
     }
 
+    const memoRenderModal = useMemo(() => {
+        return (
+            sendedEmail && <ModalComp toggleModal={setSendedEmail} showModal={sendedEmail}>Wiadomość została wysłana :)</ModalComp>
+        )
+    }, [setSendedEmail, sendedEmail])
+
+
     return (
-        <ContactMainContainer id="#Kontakt">
-            <Suspense fallback={<Loading/>}>
-                <SectionDescription
-                    title={contactMeTitle.title}
-                    subTitle={contactMeTitle.subTitle}
-                />
-            </Suspense>
-            <animated.div style={animationProps}>
-                <FormWrapper className="controllContact">
-                    <Suspense fallback={<Loading/>}>
-                        <Form onSubmit={handleSubmit}>
-                            {formData.map((item) =>
-                                <Input
-                                    key={item.id}
-                                    name={item.name}
-                                    label={item.label}
-                                    required={item.required}
-                                    placeholder={item.placeholder}
-                                    textarea={item.textarea}
-                                />
-                            )}
-                        </Form>
-                    </Suspense>
-                    
-                </FormWrapper>
-            </animated.div>
-        </ContactMainContainer>
+        <>
+            {memoRenderModal}
+            <ContactMainContainer id="#Kontakt">
+                <Suspense fallback={<Loading />}>
+                    <SectionDescription
+                        title={contactMeTitle.title}
+                        subTitle={contactMeTitle.subTitle}
+                    />
+                </Suspense>
+                <Bounce bottom>
+                    <FormWrapper className="controllContact">
+                        <Suspense fallback={<Loading />}>
+                            <Form onSubmit={handleSubmit}>
+                                {formData.map((item) =>
+                                    <Input
+                                        key={item.id}
+                                        name={item.name}
+                                        label={item.label}
+                                        required={item.required}
+                                        placeholder={item.placeholder}
+                                        textarea={item.textarea}
+                                        validation={{
+                                            required: true,
+                                            pattern: {
+                                                value: item.validationRegex,
+                                                message: item.errMess,
+                                            },
+                                            minLength: {
+                                                value: item.minLength,
+                                                message: item.errMess
+                                            }
+                                        }}
+                                    />
+                                )}
+                            </Form>
+                        </Suspense>
+                    </FormWrapper>
+                </Bounce>
+            </ContactMainContainer>
+        </>
     )
 }
 

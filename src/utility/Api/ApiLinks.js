@@ -1,0 +1,1 @@
+export const api = (route) => `https://krystiankalinowskibackend.herokuapp.com/${route}`;

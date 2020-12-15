@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { LogoWrapper, Screen, NofreezeSpinner, SpinnerDiv, SpinnerDivContainer, Svg, TextUnderSpinner } from "./Spinner.css";
 import { AiOutlineHome } from "react-icons/ai";
 import { FaUsers } from "react-icons/fa";
@@ -28,14 +28,12 @@ const AnimatedSplash = () => {
     );
 }
 
-const Spinner = () => {
-    const [redirect, setRedirect] = useState(false);
-
+const Spinner = ({setSpinner}) => {
     useEffect(() => {
-        setTimeout(() => setRedirect((boolean) => !boolean), 3000);
+        setTimeout(() => setSpinner(false), 3000);
     }, [])
 
-    return redirect ? null : <AnimatedSplash />;
+    return <AnimatedSplash/>
 }
 
 export default Spinner;

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useFormContext } from 'react-hook-form'
-import { Label, InputComp, InputContainer, TextArea } from "./Input.css";
+import { Label, InputComp, InputContainer, TextArea, ErrorDiv } from "./Input.css";
 
 const Input = ({ label, name, type = "text", required, validation, value, placeholder, textarea }) => {
     const { register, errors } = useFormContext();
@@ -25,9 +25,9 @@ const Input = ({ label, name, type = "text", required, validation, value, placeh
                 />
             }
             <Label>{label}</Label>
-            <div>
+            <ErrorDiv>
                 {errors[name] && <i>{errors[name].message}</i>}
-            </div>
+            </ErrorDiv>
         </InputContainer>
     )
 }
