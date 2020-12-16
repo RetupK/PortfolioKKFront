@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import {useEffect} from "react";
 
 export const checkVisible = (element) => {
     if (!element) { return; }

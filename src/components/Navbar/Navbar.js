@@ -1,8 +1,7 @@
-import React, { lazy, Suspense, useState } from "react";
+import React, { useState } from "react";
 import { NavbarContainer, PortfolioTextContainer, Img, HamburgerDiv, SingleElNav, Ul, NavLink, List, FooterContainer } from "./Navbar.css";
 import portfolioText from "../../assests/images/portfolioText.png";
 import { NavbarData } from "./NavbarData";
-import Loading from "../Spinner/SpinnerLoading/SpinnerLoading.css";
 import Hamburger from "../Hamburger/Hamburger";
 
 const Navbar = () => {

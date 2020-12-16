@@ -18,20 +18,25 @@ export const PortfolioMainContainer = styled.div`
         margin: 0;
     }
     @media (min-width: 1200px) and (max-width: 1600px) {
-        width: 100%;
+        width: 90%;
     }
 `
 
 export const SingleElContainer = styled.div`
-    width: 86%;
+    width: 46%;
     height: 420px;
-    margin: 45px 20px;
+    margin: 40px 20px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     @media (max-width: 767px) {
         width: 100%;
+        padding: 20px 0px;
+    }
+    @media(min-width: 768px) and (max-width: 1199px) {
+        width: 60%;
+        padding: 20px 0px;
     }
 
 `
