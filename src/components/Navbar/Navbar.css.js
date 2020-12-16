@@ -14,13 +14,13 @@ export const NavbarContainer = styled.div`
     padding-top: 50px;
     @media (max-width: 768px) {
         width: 100%;
-        padding: unset;
         justify-content: unset;
         height: auto;
         display: flex;
         align-items: center;
         flex-direction: column;
         height: 60px;
+        padding-top: unset;
     }
     @media (min-width: 768px) and (max-width: 1199px){
         width: 100%;
@@ -37,48 +37,54 @@ export const NavbarContainer = styled.div`
 `
 
 export const PortfolioTextContainer = styled.div`
-    width: 80%;
+    width: 100%;
+    background: white;
     display: flex;
-    margin: 0 auto;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    @media(max-width:1199px){
+        justify-content: ${props => props.isShow ? "end" : "unset"};
+    }
+`
+
+export const SingleElNav = styled.div`
+    display: flex;
     justify-content: center;
-    &:after{
-        content: "";
-        width:7px;
-        height:7px;
-        border-radius:50%;
-        background: ${props => props.theme.colors.color2};
-        margin: 29px 0px 23px -5px;
-        @media (max-width: 768px) {
-            margin: 32px 0px 38px -5px;
-        }
-        @media (min-width: 768px) and (max-width: 1199px){
-            margin: 24px 0px 40px -6px;
-        }
-    }
-    @media (max-width: 768px) {
-        width: 140px;
+`
+
+export const HamburgerDiv = styled.div`
+    display: none;
+    @media(max-width: 767px) {
         display: flex;
-        align-items: center;
-        height: 56px;
     }
-    @media (min-width: 768px) and (max-width: 1199px){
+    @media(min-width: 768px) and (max-width:1199px){
+        display: flex;
+    }
+`
+
+export const Img = styled.img`
+    width: 250px;
+    height: 85px;
+    z-index: 10;
+    @media(max-width: 1199px) {
+        width: 140px;
         height: 60px;
-        padding: 0px 50px;
-        width: 200px;
     }
 `
 
 export const Ul = styled.ul`
     text-decoration: none;
     list-style-type: none;
+    background: white;
     @media (max-width: 768px) {
-        padding: ${props => props.isShow ? "20px 0px 0px 0px" : "0px"};
+        padding: ${props => props.isShow ? "50px 0px 0px 0px" : "0px"};
         width: 100%;
-        background: white;
         box-shadow: ${props => props.theme.box_shadows.shadow3};
     }
     @media (min-width: 768px) and (max-width: 1199px){
         width: 100%;
+        padding: 0px 10px;
     }
 `
 

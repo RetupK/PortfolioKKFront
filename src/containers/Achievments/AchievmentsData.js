@@ -34,31 +34,31 @@ export const achievmentsData = [
     {
         id: 3,
         img: achievmentKart,
-        title: "2 miejsce na zawodach gokartowych.",
+        title: "2 miejsce na zawodach kartowych.",
         description: "Moje pierwsze zawody na gokartach, wcześniej miałem styczność z gokartami, ale tej jazdy było niewiele. Przegrałem walkę o pierwsze miejsce o 0.1s - Pamiętam to jak dziś."
     },
     {
         id: 4,
         img: kartAchievment1,
-        title: "1 miejsce na zawodach gokartowych",
+        title: "1 miejsce na zawodach kartowych",
         description: "Po porażce trzeba było się podnieść i przeanalizować błędy i wziąć się w garść, niewiele brakowało bym przegrał - tym razem wygrałem o 0.1s. Ależ to były emocje, zadowolenie, wiara i determinacja, znieczulenie od bólu trzymając kierownicę gokarta spory okres."
     },
     {
         id: 5,
         img: kartAchievment1II,
-        title: "2 miejsce na zawodach gokartowych",
+        title: "2 miejsce na zawodach kartowych",
         description: "Historia lubi się powtarzać, po raz kolejny przegrałem o 0.1s o pierwsze miejsce, zabrakło chwili. Ciężkie to było dla mnie wtedy, wierząc, że wygram niestety się nie udało."
     },
     {
         id: 7,
         img: tenisAchievment,
-        title: "Statuetka najlepszego zawodnika zawodów.",
+        title: "1 miejsce w tenisa stołowego",
         description: "Od najmłodszych lat trenowałem z przyjacielem, którego ogranie sprawiało mi największe trudy, gdy przyszły zawody trafiłem na niego w półfinale niebędąc z tego faktu zadowolony. Ograłem go 3:2, na koniec roztrzaskał swoją rakietkę o podłogę. Jak sam później przyznał był zbyt pewny wygranej i to go zgubiło."
     },
     {
         id: 8,
         img: tenisStatue,
-        title: "1 miejsce w tenisa stołowego.",
+        title: "Statuetka najlepszego zawodnika.",
         description: "Od najmłodszych lat trenowałem z przyjacielem, którego ogranie sprawiało mi największe trudy, gdy przyszły zawody trafiłem na niego w półfinale niebędąc z tego faktu zadowolony. Ograłem go 3:2, na koniec roztrzaskał swoją rakietkę o podłogę. Jak sam później przyznał był zbyt pewny wygranej i to go zgubiło."
     }
 ]

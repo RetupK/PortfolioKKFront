@@ -23,7 +23,7 @@ export const PortfolioMainContainer = styled.div`
 `
 
 export const SingleElContainer = styled.div`
-    width: 45%;
+    width: 86%;
     height: 420px;
     margin: 45px 20px;
     border-radius: 5px;
