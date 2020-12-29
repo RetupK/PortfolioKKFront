@@ -1,56 +1,57 @@
 import React, { Suspense, lazy, useState } from "react";
-import { progressbarData, SkillsData, skillsTitle } from "./SkillsData";
-import { SkillsMainContainer, PersonalSkillsSection } from "./Skills.css";
-import { stylesForCircle } from "../../components/AllAboutCircleAndProgress/CircleComp/CircleComp.css";
-import Fade from 'react-reveal/Fade';
+import { iconsData, skillsTitle } from "./SkillsData";
+// import Fade from 'react-reveal/Fade';
 import { useEventListener } from "../../utility/HelperFunction/useEventListener";
-import Loading from "../../components/Spinner/SpinnerLoading/SpinnerLoading.css";
+// import Loading from "../../components/Spinner/SpinnerLoading/SpinnerLoading.css";
 import SectionDescription from "../../components/SectionDescription/SectionDescription";
-const Progressbar = lazy(() => import("../../components/AllAboutCircleAndProgress/Progressbar/Progressbar"));
-const CircleComp = lazy(() => import("../../components/AllAboutCircleAndProgress/CircleComp/CircleComp"));
+import { CircleContainer, Icon, IconCategory, Label, IconsAroundCircle, IconContainer, Li, SkillsContainer, Ul } from "./Skills.css";
+import { icons } from "react-icons/lib";
+import { Title } from "../../components/SectionDescription/SectionDescription.css";
 
 
 const Skills = () => {
 
-    const [isVisibleCircle, setIsVisibleCircle] = useState(false);
-    useEventListener("scroll", "controllCircle", setIsVisibleCircle);
-
     const [isVisible, setIsVisible] = useState(false);
     useEventListener("scroll", "controllTest", setIsVisible);
 
+    const [isOpen, setIsOpen] = useState("");
+    const [sectionId, setSectionId] = useState(Number);
+
+    const countDeg = (item) => {
+        const deg = 360 / iconsData[sectionId].data.length;
+        return item.id * deg;
+    }
+
+    const handleActiveCircle = (name, id) => {
+        setIsOpen(name);
+        setSectionId(id);
+    }
 
     return (
-        <div id="#Umiejętności">
+        <div id="#Umiejętności" style={{ width: "100%", height: "100%" }}>
             <SectionDescription
                 title={skillsTitle.title}
                 subTitle={skillsTitle.subTitle}
             />
-            <SkillsMainContainer className="controllCircle">
-                {SkillsData.map((item) =>
-                    <Suspense fallback={<Loading />}>
-                        <CircleComp
-                            key={item.id}
-                            styles={stylesForCircle}
-                            value={item.percentage}
-                            animationStart={isVisibleCircle}
-                            setAnimation={setIsVisibleCircle}
-                            label={item.name}
-                        />
-                    </Suspense>
-                )}
-            </SkillsMainContainer>
-            <SkillsMainContainer>
-                <PersonalSkillsSection className="controllTest">
-                    <SectionDescription subSection title="Umiejętności miękkie" />
-                    <Fade when={isVisible} bottom>
-                        {progressbarData.map((item) =>
-                            <Suspense fallback={<Loading />}>
-                                <Progressbar key={item.id} value={item.value} label={item.label} />
-                            </Suspense>
+            <SkillsContainer>
+            {iconsData.map((i) =>
+                <CircleContainer key={i.id} onClick={() => handleActiveCircle(i.sectionName, i.id)}>
+                    <Label>{i.sectionName}</Label>
+                    <IconCategory color={i.color}>
+                        <Icon iconCategory={i.iconCategory}/>
+                    </IconCategory>
+                    <Ul>
+                        {i.data.map((item) =>
+                            <Li key={item.id} open={isOpen == i.sectionName} currDeg={countDeg(item)}>
+                                <IconContainer color={item.color} open={isOpen == i.sectionName} currDeg={countDeg(item)}>
+                                    {item.iconAround}
+                                </IconContainer>
+                            </Li>
                         )}
-                    </Fade>
-                </PersonalSkillsSection>
-            </SkillsMainContainer>
+                    </Ul>
+                </CircleContainer>
+            )}
+            </SkillsContainer>
         </div>
     )
 }
