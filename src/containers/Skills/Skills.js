@@ -4,9 +4,7 @@ import { iconsData, skillsTitle } from "./SkillsData";
 import { useEventListener } from "../../utility/HelperFunction/useEventListener";
 // import Loading from "../../components/Spinner/SpinnerLoading/SpinnerLoading.css";
 import SectionDescription from "../../components/SectionDescription/SectionDescription";
-import { CircleContainer, Icon, IconCategory, Label, IconsAroundCircle, IconContainer, Li, SkillsContainer, Ul } from "./Skills.css";
-import { icons } from "react-icons/lib";
-import { Title } from "../../components/SectionDescription/SectionDescription.css";
+import { CircleContainer, Icon, IconCategory, Label, IconContainer, Li, SkillsContainer, Ul } from "./Skills.css";
 
 
 const Skills = () => {
