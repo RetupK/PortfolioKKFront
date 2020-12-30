@@ -1,3 +1,4 @@
+import Button from "react-bootstrap/esm/Button";
 import styled from "styled-components";
 
 export const ContactMainContainer = styled.div`
@@ -21,4 +22,11 @@ export const FormWrapper = styled.div`
     border: 5px solid ${props => props.theme.colors.color3};
     border-radius: 10px;
     margin: 0px 20px;
+`
+
+export const Btn = styled(Button)`
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `

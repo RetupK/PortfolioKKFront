@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useMemo, useState } from "react";
-import { ContactMainContainer, FormWrapper } from "./ContactMe.css";
+import { ContactMainContainer, FormWrapper, Btn } from "./ContactMe.css";
 import { formData, contactMeTitle } from "./ContactMeData";
 import axios from "axios";
 import Loading from "../../components/Spinner/SpinnerLoading/SpinnerLoading.css";
@@ -12,16 +12,18 @@ const SectionDescription = lazy(() => import("../../components/SectionDescriptio
 
 const Contact = () => {
     const [sendedEmail, setSendedEmail] = useState(false);
+    const [clickedButton, setClickedButton] = useState(false);
 
-    const handleSubmit = (data) => {
-        axios.post(api("contacts"), {
+    const handleSubmit = async(data) => {
+        await setClickedButton(true);
+        await axios.post(api("contacts"), {
             title: data.title,
             email: data.email,
             message: data.message
         })
             .then(function (response) {
-                console.log(response);
                 setSendedEmail(true);
+                setClickedButton(false);
             })
             .catch(function (error) {
                 console.log(error);
@@ -70,6 +72,7 @@ const Contact = () => {
                                         }}
                                     />
                                 )}
+                                <Btn variant="success" type="submit">{clickedButton ? <Loading/> : "Wyślij"}</Btn>
                             </Form>
                         </Suspense>
                     </FormWrapper>

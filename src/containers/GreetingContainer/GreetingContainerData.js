@@ -67,4 +67,13 @@ export const GreetingContainterData = [
         id: 13,
         name: "Polski(C1), Angielski(B2)"
     },
+    {
+        id: 14,
+        name: "Staż pracy:",
+        keyOfObj: true,
+    },
+    {
+        id: 15,
+        name: "1 rok"
+    },
 ]
