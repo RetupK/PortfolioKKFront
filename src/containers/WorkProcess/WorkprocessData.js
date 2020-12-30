@@ -23,7 +23,7 @@ export const WorkprocessData = [
     },
     {
         id: 2,
-        name: "KODOWANKO",
+        name: "KODOWANIE",
         icon: <BiCodeAlt/>,
         isBackground: true,
     },

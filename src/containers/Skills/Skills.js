@@ -1,14 +1,11 @@
-import React, { Suspense, lazy, useState } from "react";
+import React, { useState } from "react";
 import { iconsData, skillsTitle } from "./SkillsData";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
-import { useEventListener } from "../../utility/HelperFunction/useEventListener";
 import SectionDescription from "../../components/SectionDescription/SectionDescription";
 import { CircleContainer, Icon, IconCategory, Label, SectionSkillsContainer, IconContainer, Li, SkillsContainer, Ul } from "./Skills.css";
 
 const Skills = () => {
-    const [isVisible, setIsVisible] = useState(false);
-    useEventListener("scroll", "controllTest", setIsVisible);
 
     const [isOpen, setIsOpen] = useState("");
     const [sectionId, setSectionId] = useState(Number);
@@ -23,13 +20,11 @@ const Skills = () => {
         setSectionId(id);
     }
 
-    const renderTooltip = (item) => {
-        return (
-            <Tooltip>
-                {item.name}
-            </Tooltip>
-        )
-    }
+    const renderTooltip = (item) => (
+        <Tooltip>
+            {item.name}
+        </Tooltip>
+    )
 
     return (
         <div id="#Umiejętności" style={{ width: "100%", height: "100%" }}>
@@ -47,9 +42,9 @@ const Skills = () => {
                             </IconCategory>
                             <Ul>
                                 {i.data.map((item) =>
-                                    <Li key={item.id} open={isOpen == i.sectionName} currDeg={countDeg(item)}>
+                                    <Li key={item.id} open={isOpen === i.sectionName} currDeg={countDeg(item)}>
                                         <OverlayTrigger placement="top" overlay={renderTooltip(item)}>
-                                            <IconContainer color={item.color} open={isOpen == i.sectionName} currDeg={countDeg(item)}>
+                                            <IconContainer color={item.color} open={isOpen === i.sectionName} currDeg={countDeg(item)}>
                                                 {item.iconAround}
                                             </IconContainer>
                                         </OverlayTrigger>
