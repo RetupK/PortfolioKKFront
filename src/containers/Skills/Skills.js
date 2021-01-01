@@ -33,9 +33,9 @@ const Skills = () => {
                 subTitle={skillsTitle.subTitle}
             />
             <SkillsContainer className="controllSkills">
-                <Bounce>
-                    {iconsData.map((i) =>
-                        <SectionSkillsContainer onMouseEnter={() => handleActiveCircle(i.sectionName, i.id)} onMouseLeave={() => handleActiveCircle("", i.id)}>
+                {iconsData.map((i) =>
+                    <SectionSkillsContainer onMouseEnter={() => handleActiveCircle(i.sectionName, i.id)} onMouseLeave={() => handleActiveCircle("", i.id)}>
+                        <Bounce>
                             <CircleContainer key={i.id}>
                                 <Label>{i.sectionName}</Label>
                                 <IconCategory color={i.color}>
@@ -53,9 +53,9 @@ const Skills = () => {
                                     )}
                                 </Ul>
                             </CircleContainer>
-                        </SectionSkillsContainer>
-                    )}
-                </Bounce>
+                        </Bounce>
+                    </SectionSkillsContainer>
+                )}
             </SkillsContainer>
         </div>
     )
