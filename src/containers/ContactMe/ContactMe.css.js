@@ -25,7 +25,8 @@ export const FormWrapper = styled.div`
 `
 
 export const Btn = styled(Button)`
-    width: 80px;
+    width: 100px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
