@@ -118,7 +118,6 @@ export const projects = [
             repeatedIcons[0],
             repeatedIcons[1],
             repeatedIcons[2],
-            repeatedIcons[3]
         ]
     },
     {

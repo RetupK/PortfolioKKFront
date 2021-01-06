@@ -23,14 +23,14 @@ const Skills = () => {
     )
 
     return (
-        <div id="#Umiejętności" style={{ width: "100%", height: "100%" }}>
+        <div id="#Umiejętności" className="controllCircleVisible" style={{ width: "100%", height: "100%" }}>
             <SectionDescription
                 title={skillsTitle.title}
                 subTitle={skillsTitle.subTitle}
             />
-            <SkillsContainer className="controllSkills">
+            <SkillsContainer>
                 {iconsData.map((i) =>
-                    <SectionSkillsContainer className="controllCircleVisible">
+                    <SectionSkillsContainer>
                         <Bounce>
                             <CircleContainer key={i.id}>
                                 <Label>{i.sectionName}</Label>
