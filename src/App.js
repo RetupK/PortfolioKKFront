@@ -12,8 +12,8 @@ function App() {
     const [spinner, setSpinner] = useState(true);
 
     return (
-        spinner ? <Spinner setSpinner={setSpinner}/>
-        :
+        // spinner ? <Spinner setSpinner={setSpinner}/>
+        // :
         <BrowserRouter>
             <ThemeProvider theme={theme}>
                 <GlobalStyles />

@@ -13,14 +13,10 @@ export const NavbarData = [
     },
     {
         id: 3,
-        name: "Osiągnięcia",
-    },
-    {
-        id: 4,
         name: "Portfolio",
     },
     {
-        id: 5,
+        id: 4,
         name: "Kontakt",
     },
 ]

@@ -1,53 +1,55 @@
-import React, {useState, useCallback} from "react";
-import SectionDescription from "../../components/SectionDescription/SectionDescription";
+import React, { } from "react";
 import { portfolioDescription, projects } from "./PortfolioData";
-import { SingleElContainer, PortfolioMainContainer, IconsContainer, SingleIcon, P, Img, ImageContainer, ElementsOnHoverContainer, SingleLink, LinkIcon, GithubIcon } from "./Portfolio.css";
+import { Fade } from "react-reveal";
+import SectionDescription from "../../components/SectionDescription/SectionDescription";
+import { Icon, ImgComp, PortfolioComp, PortfolioMainContainer, PortfolioTitle, IconsWrapper, ImgContainer, ButtonContainer, MainIconsWrapper } from "./Portfolio.css";
+import { Btn, Paragraph } from "../../utility/RepeatedStyle/RepeatedStyle";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from "react-bootstrap/esm/Tooltip";
 
 const Portfolio = () => {
-    const [mouseEnter, setMouseEnter] = useState(false);
 
-    const handleChangeMouse = useCallback((id) => {
-        setMouseEnter(id)
-    }, [setMouseEnter])
-    
-    const conditionHover = useCallback((item) => {
-        return mouseEnter === item.id ?
-            <ElementsOnHoverContainer>
-                <SingleLink href={item.path} target="_blank" rel="noreferrer" rel="noopener"><LinkIcon /></SingleLink>
-                <SingleLink href={item.pathGithub} target="_blank" rel="noreferrer" rel="noopener"><GithubIcon /></SingleLink>
-            </ElementsOnHoverContainer> :
-            <Img
-                url={item.img}
-                shadow
-            />
-    }, [mouseEnter])
+    const renderTooltip = (item) => (
+        <Tooltip>
+            {item.name}
+        </Tooltip>
+    )
 
     return (
-        <div id="#Portfolio">
+        <>
             <SectionDescription
                 title={portfolioDescription.title}
                 subTitle={portfolioDescription.subTitle}
             />
-            <PortfolioMainContainer>
-                {projects.map((item) => {
-                    return (
-                        <SingleElContainer key={item.id}>
-                            <ImageContainer
-                                onMouseEnter={() => handleChangeMouse(item.id)}
-                                onMouseLeave={() => handleChangeMouse(null)}
-                            >
-                                {conditionHover(item)}
-                            </ImageContainer>
-                            <P>{item.name}</P>
-                            <IconsContainer>
-                                {item.icons.map((i,id) => <SingleIcon key={id} color={i.styles.color}>{i.icon}</SingleIcon>)}
-                            </IconsContainer>
-                            
-                        </SingleElContainer>
-                    )
-                })}
+            <PortfolioMainContainer id="#Portfolio">
+                {projects.map((item) =>
+                    <Fade bottom>
+                        <PortfolioComp>
+                            <ImgContainer>
+                                <ImgComp src={item.img} />
+                            </ImgContainer>
+                            <PortfolioTitle>
+                                <Paragraph>{item.name}</Paragraph>
+                            </PortfolioTitle>
+                            <MainIconsWrapper>
+                                {item.icons.map((i) =>
+                                    <OverlayTrigger key={i.id} placement="top" overlay={renderTooltip(i)}>
+                                        <IconsWrapper color={i.styles.color}>
+                                            <Icon icon={i.icon} />
+                                        </IconsWrapper>
+                                    </OverlayTrigger>
+                                )}
+                            </MainIconsWrapper>
+                            <ButtonContainer>
+                                <a href={item.path} target="_blank" rel="noopener noreferrer">
+                                    <Btn>Zobacz Live</Btn>
+                                </a>
+                            </ButtonContainer>
+                        </PortfolioComp>
+                    </Fade>
+                )}
             </PortfolioMainContainer>
-        </div>
+        </>
     )
 }
 

@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import AboutMeContainer from "../../containers/AboutMeContainer/AboutMeContainer";
-import Achievments from "../../containers/Achievments/Achievments";
 import Contact from "../../containers/ContactMe/ContactMe";
 import GreetingContainer from "../../containers/GreetingContainer/GreetingContainer";
 import Portfolio from "../../containers/Portfolio/Portfolio";
@@ -18,7 +17,6 @@ const Home = () => {
                 <AboutMeContainer/>
                 <WorkProcess/>
                 <Skills/>
-                <Achievments/>
                 <Portfolio/>
                 <Contact/>
             </ContentContainer>

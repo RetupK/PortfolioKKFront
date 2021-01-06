@@ -1,112 +1,97 @@
 import styled from "styled-components";
-import { Paragraph } from "../../utility/RepeatedStyle/RepeatedStyle";
-import {ImSearch} from "react-icons/im";
-import {FaGithub} from "react-icons/fa";
+
+export const Icon = styled(props => props.icon)`
+    
+`
 
 export const PortfolioMainContainer = styled.div`
-    width: 80%;
-    margin: 0 auto;
-    flex-wrap: wrap;
     display: flex;
-    align-items: center;
+    width: 100%;
     justify-content: center;
-    @media (max-width: 767px) {
-        width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @media(max-width: 767px) {
+        flex-direction: column;
     }
-    @media (min-width: 768px) and (max-width: 1199px){
-        width: 100%;
-        margin: 0;
+`
+
+export const PortfolioComp = styled.div`
+    margin: 0px 20px 40px 20px;
+    box-shadow: ${props => props.theme.box_shadows.shadow1};
+    border-radius: 20px;
+    padding: 10px 10px;
+    @media(min-width: 768px) and (max-width: 1199px) {
+        margin: 35px 30px;
     }
-    @media (min-width: 1200px) and (max-width: 1600px) {
+    @media(max-width: 767px) {
+        width: 90%;
+        margin: 36px auto;
+        border-bottom: 1px solid;
+        padding: 0px 0px 20px 0px;
+        color: lightslategrey;
+    }
+`
+
+export const ImgContainer = styled.div`
+    margin: 0 auto;
+    border-radius: 20px;
+`
+
+export const ImgComp = styled.img`
+    width: 400px;
+    border-radius: 5px;
+    height: 250px;
+    @media(max-width: 767px){
+        width: 100%;
+        height: unset;
+    }
+    @media(min-width: 768px) and (max-width: 1300px) {
+        width: 340px;
+    }
+`
+
+export const PortfolioTitle = styled.div`
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    background: ${props => props.theme.colors.color3};
+    box-shadow: ${props => props.theme.box_shadows.shadow1};
+    color: white;
+`
+
+export const SpanTitle = styled.span`
+    margin: 0;
+    font-family: "Google Sans Medium";
+    font-size: 20px;
+    @media(max-width: 767px) {
+        font-size: 16px;
+    }
+`
+
+export const IconsWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100px;
+    align-items: center;
+    margin: 0 auto;
+    width: 45%;
+    @media(max-width: 767px) {
         width: 90%;
     }
-`
-
-export const SingleElContainer = styled.div`
-    width: 46%;
-    height: 420px;
-    margin: 40px 20px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    @media (max-width: 767px) {
-        width: 100%;
-        padding: 20px 0px;
-    }
-    @media(min-width: 768px) and (max-width: 1199px) {
-        width: 60%;
-        padding: 20px 0px;
-    }
-
-`
-
-export const P = styled(Paragraph)`
-    margin-top: 20px;
-`
-
-export const Img = styled.img`
-    width: 100%;
-    height: 100%;
-    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    border-radius: 20px;
-    cursor: pointer;
-    background: url("${props => props.url}");
-    background-size: cover;
-    background-position: center;
-`
-
-export const ImageContainer = styled.div`
-    width: 100%;
-    height: 100%;
-    &:hover{
-        background: white;
-        border: 5px solid black;
-        border-radius: 5px;
-        z-index: 9999;
-    }
-`
-
-export const ElementsOnHoverContainer = styled.div`
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`
-
-export const SingleLink = styled.a`
-    text-decoration: none;
-    list-style-type: none;
-    color: black;
-    padding: 0px 20px;
-    &:hover{
-        text-decoration: none;
-        list-style-type: none;
-        color: black;
-        transform: scale(1.04);
-        color: ${props => props.theme.colors.color2};
-    }
-`
-
-export const LinkIcon = styled(ImSearch)`
-    height: 50px;
-    width: 50px;
-`
-
-export const GithubIcon = styled(FaGithub)`
-    height: 50px;
-    width: 50px;
-`
-
-export const IconsContainer = styled.div`
-    display: flex;
-    width: 100%;
-    justify-content: center;
-`
-
-export const SingleIcon = styled.div`
-    color: ${props => props.color};
     font-size: 30px;
-    padding: 0px 5px;
+    color: ${props => props.color};
+`
+
+export const MainIconsWrapper = styled.div`
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+`
+
+export const ButtonContainer = styled.div`
+    text-align: center;
 `

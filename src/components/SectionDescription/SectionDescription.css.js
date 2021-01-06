@@ -37,7 +37,7 @@ export const SubTitle = styled.h3`
 export const TitleContainer = styled.div`
     text-align: center;
     height:80px;
-    margin: 70px 0px 30px 0px;
+    margin: 70px;
     &:before{
         content: "";
         position: absolute;

@@ -5,19 +5,15 @@ import Tooltip from 'react-bootstrap/Tooltip';
 import SectionDescription from "../../components/SectionDescription/SectionDescription";
 import { CircleContainer, Icon, IconCategory, Label, SectionSkillsContainer, IconContainer, Li, SkillsContainer, Ul } from "./Skills.css";
 import Bounce from 'react-reveal/Bounce';
+import { useEventListener } from "../../utility/HelperFunction/useEventListener";
 
 const Skills = () => {
-    const [isOpen, setIsOpen] = useState("");
-    const [sectionId, setSectionId] = useState(Number);
+    const [isVisibleCircle, setIsVisibleCircle] = useState(true);
+    useEventListener("scroll", "controllCircleVisible", setIsVisibleCircle);
 
-    const countDeg = (item) => {
-        const deg = 360 / iconsData[sectionId].data.length;
+    const countDeg = (item, id) => {
+        const deg = 360 / iconsData[id].data.length;
         return item.id * deg;
-    }
-
-    const handleActiveCircle = (name, id) => {
-        setIsOpen(name);
-        setSectionId(id);
     }
 
     const renderTooltip = (item) => (
@@ -34,7 +30,7 @@ const Skills = () => {
             />
             <SkillsContainer className="controllSkills">
                 {iconsData.map((i) =>
-                    <SectionSkillsContainer onMouseEnter={() => handleActiveCircle(i.sectionName, i.id)} onMouseLeave={() => handleActiveCircle("", i.id)}>
+                    <SectionSkillsContainer className="controllCircleVisible">
                         <Bounce>
                             <CircleContainer key={i.id}>
                                 <Label>{i.sectionName}</Label>
@@ -43,9 +39,9 @@ const Skills = () => {
                                 </IconCategory>
                                 <Ul>
                                     {i.data.map((item) =>
-                                        <Li key={item.id} open={isOpen === i.sectionName} currDeg={countDeg(item)}>
+                                        <Li key={item.id} open={isVisibleCircle} currDeg={countDeg(item, i.id)}>
                                             <OverlayTrigger placement="top" overlay={renderTooltip(item)}>
-                                                <IconContainer color={item.color} open={isOpen === i.sectionName} currDeg={countDeg(item)}>
+                                                <IconContainer color={item.color} open={isVisibleCircle} currDeg={countDeg(item, i.id)}>
                                                     {item.iconAround}
                                                 </IconContainer>
                                             </OverlayTrigger>

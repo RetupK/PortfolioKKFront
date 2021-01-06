@@ -1,11 +1,12 @@
 import React, { lazy, Suspense, useMemo, useState } from "react";
-import { ContactMainContainer, FormWrapper, Btn } from "./ContactMe.css";
+import { ContactMainContainer, FormWrapper } from "./ContactMe.css";
 import { formData, contactMeTitle } from "./ContactMeData";
 import axios from "axios";
 import Loading from "../../components/Spinner/SpinnerLoading/SpinnerLoading.css";
 import { api } from "../../utility/Api/ApiLinks";
 import ModalComp from "../../components/Modal/Modal";
 import Bounce from 'react-reveal/Bounce';
+import { Btn } from "../../utility/RepeatedStyle/RepeatedStyle";
 const Form = lazy(() => import("../../components/AllAboutForm/Form/Form"));
 const Input = lazy(() => import("../../components/AllAboutForm/Input/Input"));
 const SectionDescription = lazy(() => import("../../components/SectionDescription/SectionDescription"));
@@ -72,7 +73,7 @@ const Contact = () => {
                                         }}
                                     />
                                 )}
-                                <Btn variant="success" type="submit">{clickedButton ? <Loading/> : "Wyślij"}</Btn>
+                                <Btn type="submit">{clickedButton ? <Loading/> : "Wyślij"}</Btn>
                             </Form>
                         </Suspense>
                     </FormWrapper>

@@ -36,7 +36,6 @@ const GreetingContainer = () => {
                                     </SingleElementValue>
                                 )}
                             </KeyValueContainer>
-                            <NavLink to="#Osiągnięcia"><Button variant="danger">Osiągnięcia</Button></NavLink>
                         </SingleContentContainer>
                     </CardContentContainer>
                     <Footer>
