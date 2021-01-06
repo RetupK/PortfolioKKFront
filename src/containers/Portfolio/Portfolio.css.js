@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-export const Icon = styled(props => props.icon)`
-    
-`
-
 export const PortfolioMainContainer = styled.div`
     display: flex;
     width: 100%;
@@ -79,6 +75,7 @@ export const IconsWrapper = styled.div`
     align-items: center;
     margin: 0 auto;
     width: 45%;
+    height: 100%;
     @media(max-width: 767px) {
         width: 90%;
     }
@@ -90,6 +87,7 @@ export const MainIconsWrapper = styled.div`
     display: flex;
     margin: 0 auto;
     width: 80%;
+    height: 80px;
 `
 
 export const ButtonContainer = styled.div`

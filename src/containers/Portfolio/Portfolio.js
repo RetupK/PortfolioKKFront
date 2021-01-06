@@ -2,7 +2,7 @@ import React, { } from "react";
 import { portfolioDescription, projects } from "./PortfolioData";
 import { Fade } from "react-reveal";
 import SectionDescription from "../../components/SectionDescription/SectionDescription";
-import { Icon, ImgComp, PortfolioComp, PortfolioMainContainer, PortfolioTitle, IconsWrapper, ImgContainer, ButtonContainer, MainIconsWrapper } from "./Portfolio.css";
+import { ImgComp, PortfolioComp, PortfolioMainContainer, PortfolioTitle, IconsWrapper, ImgContainer, ButtonContainer, MainIconsWrapper } from "./Portfolio.css";
 import { Btn, Paragraph } from "../../utility/RepeatedStyle/RepeatedStyle";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from "react-bootstrap/esm/Tooltip";
@@ -33,11 +33,11 @@ const Portfolio = () => {
                             </PortfolioTitle>
                             <MainIconsWrapper>
                                 {item.icons.map((i) =>
-                                    <OverlayTrigger key={i.id} placement="top" overlay={renderTooltip(i)}>
-                                        <IconsWrapper color={i.styles.color}>
-                                            <Icon icon={i.icon} />
-                                        </IconsWrapper>
-                                    </OverlayTrigger>
+                                    <IconsWrapper color={i.styles.color}>
+                                        <OverlayTrigger key={i.id} placement="top" overlay={renderTooltip(i)}>
+                                            {i.icon}
+                                        </OverlayTrigger>
+                                    </IconsWrapper>
                                 )}
                             </MainIconsWrapper>
                             <ButtonContainer>
