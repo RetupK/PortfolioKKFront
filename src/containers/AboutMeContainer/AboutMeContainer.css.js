@@ -28,11 +28,14 @@ export const TextContainer = styled(SubTitle)`
     @media (max-width: 767px) {
         width: 100%;
         padding: 0px 25px;
+        text-align: left;
     }
     @media (min-width: 768px) and (max-width: 1199px){
         padding: 0px 30px;
+        text-align: left;
     }
     @media (min-width: 1200px) and (max-width: 1400px) {
         padding: 0px 30px;
+        text-align: left;
     }
 `
