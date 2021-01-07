@@ -24,23 +24,13 @@ export const SectionSkillsContainer = styled.div`
 `
 
 export const CircleContainer = styled.div`
-    width: 140px;
+    width: 90px;
     height: 140px;
     border-radius: 50%;
     transition: all .1s;
     text-align: center;
     &:hover{
         cursor: pointer;
-    }
-    @media (max-width: 767px) {
-        margin: 40px 0px 20px 50px;
-    }
-    
-    @media (min-width: 768px) and (max-width: 1199px) {
-        margin: 40px 0px 20px 30px;
-    }
-    @media(min-width: 1200px) and (max-width: 1400px){
-        margin: 40px 0px 20px 50px;
     }
 `
 
@@ -74,13 +64,17 @@ export const Ul = styled.ul`
     margin-top: -145px;
     margin-left: -55px;
     @media (min-width: 768px) and (max-width: 1199px) {
-        margin-top: -121px;
+        margin-top: -127px;
         margin-left: -27px;
+    }
+    @media(min-width: 1200px) and (max-width: 1400px){
+        margin-top: -133px;
+        margin-left: -40px;
     }
     @media (max-width: 767px) {
         margin-top: -129px;
         margin-left: -40px;
-    }
+    } 
 `
 
 export const Li = styled.li`
@@ -95,6 +89,10 @@ export const Li = styled.li`
     @media (min-width: 768px) and (max-width: 1199px) {
         height: 100px;
         width: 100px;
+    }
+    @media(min-width: 1200px) and (max-width: 1400px){
+        height: 120px;
+        width: 120px;
     }
     @media (max-width: 767px) {
         height: 120px;
@@ -127,6 +125,11 @@ export const IconContainer = styled.div`
         font-size: ${props => props.open ? "30px" : "0px"};
     }
     @media(min-width: 1200px) and (max-width: 1400px){
+        width: ${props => props.open ? "50px" : "0px"};
+        height: ${props => props.open ? "50px" : "0px"};
+        font-size: ${props => props.open ? "30px" : "0px"};
+    }
+    @media(min-width: 1200px) and (max-width: 1400px){
         margin: 40px 0px 20px 50px;
     }
 `
@@ -140,4 +143,5 @@ export const Label = styled.label`
     margin-bottom: 5px;
     margin-right: 45px;
     font-weight: bold;
+    width: 100%;
 `
