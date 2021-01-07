@@ -64,8 +64,8 @@ export const Ul = styled.ul`
     margin-top: -145px;
     margin-left: -55px;
     @media (min-width: 768px) and (max-width: 1199px) {
-        margin-top: -127px;
-        margin-left: -27px;
+        margin-top: -122px;
+        margin-left: -30px;
     }
     @media(min-width: 1200px) and (max-width: 1400px){
         margin-top: -133px;
